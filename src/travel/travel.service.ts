@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTravelDto } from './dto/create-travel.dto.js';
 import { UpdateTravelDto } from './dto/update-travel.dto.js';
-import {product} from './product.interface';
+import {travel} from './travel.interface.js';
 @Injectable()
 export class TravelService {
   private trips=[
