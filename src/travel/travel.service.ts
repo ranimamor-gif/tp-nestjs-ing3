@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTravelDto } from './dto/create-travel.dto.js';
 import { UpdateTravelDto } from './dto/update-travel.dto.js';
-import {travel} from './travel.interface.js';
+import {travel} from './travel.interface';
 @Injectable()
 export class TravelService {
   private trips=[
@@ -17,14 +17,10 @@ export class TravelService {
     },
   ];
   private lastId=3;
-  create(createTravelDto: CreateTravelDto) {
-    return 'This action adds a new travel';
-  }
-
+  
   findAll(id:number,name:string,price:number) {
      return this.trips.filter((trip)=>
-      trip.id && trip.name && trip.price
-
+     {trip.id && trip.name && trip.price}
     );
   }
 
@@ -37,11 +33,7 @@ return Voyage;
 }
   
 
-  update(id: number, updateTravelDto: UpdateTravelDto) {
-    return `This action updates a #${id} travel`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} travel`;
+  create(createTravelDto: CreateTravelDto) {
+    return 'This action adds a new travel';
   }
 }
