@@ -21,8 +21,11 @@ export class TravelService {
     return 'This action adds a new travel';
   }
 
-  findAll() {
-    return `This action returns all travel`;
+  findAll(id:number,name:string,price:number) {
+     return this.trips.filter((trip)=>
+     return trip.id && trip.name && trip.price;
+
+    );
   }
 
   findOne(id: number) : trips{
