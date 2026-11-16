@@ -23,7 +23,7 @@ export class TravelService {
 
   findAll(id:number,name:string,price:number) {
      return this.trips.filter((trip)=>
-     return trip.id && trip.name && trip.price;
+      trip.id && trip.name && trip.price
 
     );
   }
@@ -31,7 +31,7 @@ export class TravelService {
   findOne(id: number) : trips{
 const Voyage = this.trips.find((V) => V.id === id);
 if (!Voyage) {
-throw new NotFoundException(`voyage ${id} introuvable`);
+return `voyage ${id} introuvable`;
 }
 return Voyage;
 }
